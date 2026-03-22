@@ -1,0 +1,123 @@
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ebebeb; /* Fondo gris claro estilo e-commerce */
+    color: #333;
+}
+
+/* --- LAYOUT PRINCIPAL (Grid) --- */
+.contedenor-grid {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "aside main";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+/* --- CABECERA --- */
+.cabezera {
+    grid-area: header;
+    background-color: #ffe600; /* Amarillo Mercado Libre */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-principal h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.titulo-secundario p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- MENÚ LATERAL (Aside) --- */
+.menu-derecho {
+    grid-area: aside;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.menu-derecho h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+ul.menu-categoria {
+    list-style: none;
+}
+
+ul.menu-categoria li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #333;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    transition: color 0.2s ease;
+}
+
+/* Efecto al pasar el mouse por encima de los enlaces */
+ul.menu-categoria li a:hover {
+    color: #3483fa; /* Azul Mercado Libre */
+}
+
+/* Aseguramos que los iconos SVG no se deformen */
+ul.menu-categoria li a svg {
+    flex-shrink: 0;
+}
+
+/* --- ÁREA DE CONTENIDO (Main) --- */
+.area-contenido {
+    grid-area: main;
+}
+
+.area-contenido iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 85vh; /* Le damos una altura mínima para que ocupe bien la pantalla */
+    border: none;
+    display: block; /* Quita un pequeño margen fantasma debajo del iframe */
+}
+
+/* --- RESPONSIVO (Móviles y Tablets pequeñas) --- */
+@media (max-width: 768px) {
+    .contedenor-grid {
+        grid-template-areas:
+            "header"
+            "aside"
+            "main";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .cabezera {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .menu-derecho {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .area-contenido iframe {
+        height: 800px; /* Altura fija en móviles para poder scrollear dentro del catálogo */
+    }
+}

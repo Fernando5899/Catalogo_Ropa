@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/producto.css">
+    <title>Producto</title>
+</head>
+<body>
+    <header class="cabezera">
+        <a href="index.html" class="boton-regresar"><---- Regresar a la Tienda</a>
+    </header>
+
+    <div class="contenedor-producto">
+        <div class="galeria-imagen">
+            <img src="img/Camisa_cuadros.png" class="imagen-muestra activa" onclick="cambiarImagen(this, 0)">
+            <img src="img/Camisa_Blanca.png" class="imagen-siguiente" onclick="cambiarImagen(this, 1)">
+        </div>
+
+        <div class="imagen-principal-contenedor" onclick="abrirModal()">
+            <img id="imagen-principal" src="img/Camisa_cuadros.png" alt="Imagen del producto">
+        </div>
+
+        <div class="info-producto">
+            <h1 class="titulo-producto">Camisa a Cuadros</h1>
+            <h2 class="precio-producto">$520.00</h2>
+            <p class="descripcion">Estilo casual, franela suave, ideal para el día a día.</p>
+        </div>
+
+        <div id="miModal" class="modal">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <span class="boton-anterior" onclick="navegarModal(-1)">&#10094;</span>
+            <img class="modal-contenido" id="img-modal">
+            <span class="boton-siguiente" onclick="navegarModal(1)">&#10095;</span>
+        </div>
+    </div>
+
+    <script src="javascript/producto.js"></script>
+</body>
+</html>

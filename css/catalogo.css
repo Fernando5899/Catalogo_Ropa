@@ -1,0 +1,118 @@
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- ESTILOS DEL BODY (Dentro del Iframe) --- */
+.body-iframe {
+    font-family: Arial, sans-serif;
+    background-color: #ebebeb; /* Mismo fondo gris que el index para que se vea unificado */
+    padding: 20px;
+}
+
+/* Para el titulo Dentro de nuestro Iframe */
+.Catalogo {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Para cada una de las secciones del Catalogo de Ropa */
+
+.Seccion {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* --- SECCIÓN DEL CATÁLOGO --- */
+.seccion-catalogo {
+    margin-bottom: 40px;
+}
+
+.seccion-catalogo h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: normal; /* Estilo de texto más limpio */
+}
+
+/* --- CUADRÍCULA DE PRODUCTOS (Completamente Responsiva) --- */
+.producto-grid {
+    display: grid;
+    /* Esta línea es la que hace todo responsivo automáticamente */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* --- TARJETA DE PRODUCTO --- */
+.carta-producto {
+    background-color: #fff;
+    border-radius: 4px; /* Bordes redondeados sutiles */
+    padding: 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efecto al pasar el mouse por encima de la tarjeta */
+.carta-producto:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- CONTENEDOR DE LA IMAGEN --- */
+.imagen-contenedor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #eee; /* Línea muy tenue para separar la imagen del texto */
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+/* El enlace que envuelve la imagen */
+.imagen-contenedor a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 200px; /* Altura fija para que todas las tarjetas queden del mismo tamaño */
+    object-fit: contain; /* Evita que las imágenes se estiren o deformen */
+    cursor: pointer;
+}
+
+/* --- INFORMACIÓN DEL PRODUCTO --- */
+.producto-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que el precio baje si hay espacio extra */
+    padding-top: 10px; /* Un poco de respiro entre la línea y el texto */
+}
+
+/* Cambiamos h3 por h4 para que coincida con tu HTML */
+.producto-info h4 {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 6px 0;
+    font-weight: 400; /* Le quitamos lo súper negrito para que se vea más elegante */
+    line-height: 1.3;
+}
+
+.producto-info p {
+    font-size: 12px;
+    color: #999; /* Un gris más claro para que no compita con el título */
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+
+.precio {
+    font-size: 22px; /* Un tamaño excelente para resaltar el costo */
+    color: #333;
+    margin-top: auto; /* Empuja el precio siempre al fondo de la tarjeta */
+    font-weight: normal;
+}
