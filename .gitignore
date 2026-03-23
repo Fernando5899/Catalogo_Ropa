@@ -1,0 +1,9 @@
+# Carpetas de IDE
+.idea/
+
+# Archivos de IntelliJ
+*.iml
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
